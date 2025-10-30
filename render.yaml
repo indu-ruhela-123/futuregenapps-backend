@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: futuregen-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5001
+      - key: MONGO_URI
+        value: mongodb+srv://futuregen:FutureGen%40123@cluster0.rzd1e0f.mongodb.net/futuregenapps
+      - key: JWT_SECRET
+        value: replace_with_strong_secret
+      - key: ADMIN_EMAIL
+        value: admin@futuregenapps.com
+      - key: EMAIL_HOST
+        value: smtp-relay.brevo.com
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USER
+        value: your_brevo_login_email
+      - key: EMAIL_PASS
+        value: your_brevo_smtp_key
+      - key: TO_EMAIL
+        value: your_brevo_login_email
+      - key: BASE_URL
+        value: https://futuregenapps-backend.onrender.com
