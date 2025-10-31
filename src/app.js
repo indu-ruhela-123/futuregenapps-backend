@@ -3,8 +3,12 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import contactRoutes from "./routes/contact.routes.js";
+import homeRoutes from "./routes/home.routes.js";
+
+
 
 dotenv.config();
+app.use("/api/home", homeRoutes);
 const app = express();
 
 app.use(cors());
