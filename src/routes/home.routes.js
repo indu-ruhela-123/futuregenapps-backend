@@ -1,7 +1,11 @@
 import express from "express";
 import Home from "../models/Home.js";
+import { getHomeData } from "../controllers/home.controller.js";
+
+
 
 const router = express.Router();
+router.get("/", getHomeData);
 
 // ✅ Get all home data
 router.get("/", async (req, res) => {

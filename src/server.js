@@ -8,6 +8,7 @@ import homeRoutes from "./routes/home.routes.js";
 dotenv.config();
 
 const app = express();
+
 app.use("/api/home", homeRoutes);
 
 

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const homeSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true },
+title: { type: String, required: true },
     subtitle: { type: String },
     bannerImage: { type: String },
     aboutSection: { type: String },
