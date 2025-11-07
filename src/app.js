@@ -1,26 +1,29 @@
 import express from "express";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
 import cors from "cors";
+
+// ✅ Import Routes
 import contactRoutes from "./routes/contact.routes.js";
 import homeRoutes from "./routes/home.routes.js";
-
-
+import enquiryRoutes from "./routes/enquiry.routes.js"; // 👈 Important
 
 dotenv.config();
-app.use("/api/home", homeRoutes);
-const app = express();
 
+const app = express(); // 👈 app sabse pehle define hona chahiye
+
+// ✅ Middlewares
 app.use(cors());
 app.use(express.json());
 
-// ✅ Root check route
+// ✅ Routes
+app.use("/api/home", homeRoutes);
+app.use("/api/contact", contactRoutes);
+app.use("/api/enquiry", enquiryRoutes); // 👈 Add this line
+
+// ✅ Root route
 app.get("/", (req, res) => {
   res.send("🚀 FutureGen Backend is running...");
 });
 
-// ✅ Contact API
-app.use("/api/contact", contactRoutes);
-
-// ✅ MongoDB connect (in server.js)
+// ✅ Export app
 export default app;
